@@ -68,6 +68,7 @@ nomad_node_role: "{{ lookup('env','NOMAD_NODE_ROLE') | default('client', true) }
 nomad_leave_on_terminate: true
 nomad_leave_on_interrupt: false
 nomad_disable_update_check: false
+nomad_dev_mode_switch: false
 
 #### Server settings
 nomad_retry_max: 0
