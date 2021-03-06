@@ -17,7 +17,7 @@ Wants=network-online.target
 [Service]
 User={{ nomad_user }}
 Group={{ nomad_group }}
-ExecStart={{ nomad_bin_dir }}/nomad agent {{ nomad_dev_mode_switch ? "-dev " : ""}}-config={{ nomad_config_dir }}
+ExecStart={{ nomad_bin_dir }}/nomad agent {{ nomad_dev_mode_switch | ternary("-dev ", "") }}-config={{ nomad_config_dir }}
 
 ExecReload=/bin/kill -HUP $MAINPID
 KillMode=process
